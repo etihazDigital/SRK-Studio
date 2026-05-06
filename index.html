@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SRK Studio</title>
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: black;
+  color: white;
+}
+
+header h1 {
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  color: white;
+
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://i.postimg.cc/TYcMXLvR/1777997985092.png");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+}
+/* SECTION */
+section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* SERVICES */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.service-card,
+.step {
+  background: #111;
+  color: #f5f5f5;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s ease;
+}
+.service-card h3,
+.step h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.service-card p,
+.step p {
+  color: #ccc;
+  font-size: 14px;
+}
+.service-card:hover,
+.step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* GALLERY */
+.gallery {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s;
+}
+/* CONTACT */
+.contact p {
+  margin: 5px 0;
+}
+
+/* SOCIAL */
+.social-links a {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 15px;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  background: black;
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.tagline {
+  font-size: 12px;
+  color: #d4af37;
+}
+
+.marquee {
+  overflow: hidden;
+  background: black;
+  color: gold;
+  padding: 10px 0;
+}
+
+.marquee p {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 15s linear infinite;
+  font-size: 14px;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.about {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.about p {
+  font-size: 14px;
+  max-width: 600px;
+  margin: auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+
+.about {
+  background: white;
+  color: black;
+}
+
+.about p {
+  color: black;
+}
+
+.process {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.step {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.step h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 12px;
+  color: #ccc;
+}
+.step:hover {
+  background: black;
+  color: white;
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+
+
+.step {
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.step:hover {
+  background: black;
+  color: gold;
+  transform: translateY(-8px);
+}
+
+
+.fabric {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.fabric-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.fabric-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.fabric-grid img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 10px gold;
+}
+
+.fabric {
+  background: #f9f9f9;
+}
+
+.women {
+  padding: 50px 20px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.women-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.women-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: 0.3s;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.women-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 1000px;
+  margin: auto;
+}
+.work-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* important */
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.footer-social {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  padding: 8px 14px;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+
+
+.wedding {
+  padding: 60px 20px;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+
+.wedding h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.wedding-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.wedding-grid img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s;
+}
+
+.wedding-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px gold;
+}
+.wedding-grid img {
+  transform: scale(1.02);
+}
+
+
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.cta h2 {
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.cta-btn:hover {
+  background: white;
+}
+
+
+.testimonial {
+  background: black;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-box {
+  max-width: 500px; /* makes it small */
+  text-align: center;
+  color: white;
+}
+
+.testimonial-box h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.review {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.testimonial-box h4 {
+  color: gold;
+  font-size: 13px;
+}
+
+
+/* MOBILE FIX */
+@media (max-width:600px){
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+@media (max-width: 600px) {
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px; /* reduce gap */
+    margin-top: 10px;
+  }
+
+  nav a {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+}
+@media (max-width: 900px) {
+  .fabric-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .fabric-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width: 768px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .women-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  nav a {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+  <img src="https://i.postimg.cc/pXBbthMv/IMG-20260505-215028.png" alt="logo">
+
+  <div class="logo-text">
+    <span class="brand-name">SRK Studio</span>
+    <span class="tagline">Bespoke Tailoring</span>
+  </div>
+</div>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#sevicrs">Services</a>
+    <a href="#dallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+  <h2>Bespoke Tailoring & Design</h2>
+  <p>Premium suits, western wear & fashion academy</p>
+  <a href="#contact" class="hero-btn">Contact Now</a>
+  this is a demo website 
+</section>
+
+
+<div class="marquee">
+  <p>
+    ✨ Premium Bespoke Tailoring • Custom Suits • Perfect Fit • Luxury Fabrics • SRK Studio ✨
+  </p>
+</div>
+
+
+<section class="gallery">
+  <h2>Our Work</h2>
+
+  <div class="gallery-grid">
+    <img src="https://i.postimg.cc/VkLysfz8/IMG-20260505-WA0042.jpg">
+    <img src="https://i.postimg.cc/sgDFfj3R/IMG-20260505-WA0043.jpg">
+    <img src="https://i.postimg.cc/SxN0QSm0/IMG-20260505-WA0044.jpg">
+
+    <img src="https://i.postimg.cc/fRHGJGbd/IMG-20260505-WA0017.jpg">
+    <img src="https://i.postimg.cc/t4C0Rq9Y/IMG-20260505-WA0031.jpg">
+    <img src="https://i.postimg.cc/CxLyMhwK/IMG-20260505-WA0033.jpg">
+  </div>
+</section>
+
+
+<section class="services">
+  <h2>Our Services</h2>
+
+  <div class="service-container">
+
+    <div class="service-card">
+      <h3>Bespoke Suits</h3>
+      <p>Custom-made suits crafted with precision for a perfect fit and luxury feel.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Western Wear</h3>
+      <p>Modern and stylish outfits designed to match your personality.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Tailoring Academy</h3>
+      <p>Learn professional tailoring skills with expert guidance and hands-on training.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="women">
+  <h2>Women Collection</h2>
+
+  <div class="women-grid">
+
+    <img src="https://i.postimg.cc/SxN0QSm9/IMG-20260505-WA0025.jpg">
+    <img src="https://i.postimg.cc/x1Trjf9H/IMG-20260505-WA0024.jpg">
+    <img src="https://i.postimg.cc/8zP8kpTM/IMG-20260505-WA0023.jpg">
+    <img src="https://i.postimg.cc/XY2RpRvq/IMG-20260505-WA0022.jpg">
+    <img src="https://i.postimg.cc/SxZBJBKJ/IMG-20260505-WA0021.jpg">
+    <img src="https://i.postimg.cc/g2MCnC0w/IMG-20260505-WA0020.jpg">
+
+  </div>
+</section>
+
+
+<section class="process">
+  <h2>Our Process</h2>
+
+  <div class="process-steps">
+
+    <div class="step">
+      <h3>1. Consultation</h3>
+      <p>We understand your style, needs, and preferences.</p>
+    </div>
+
+    <div class="step">
+      <h3>2. Fabric Selection</h3>
+      <p>Choose from premium fabrics and designs.</p>
+    </div>
+
+    <div class="step">
+      <h3>3. Measurement</h3>
+      <p>Precise measurements for the perfect fit.</p>
+    </div>
+
+    <div class="step">
+      <h3>4. Stitching</h3>
+      <p>Expert craftsmanship with attention to detail.</p>
+    </div>
+
+    <div class="step">
+      <h3>5. Final Delivery</h3>
+      <p>Your custom outfit, ready to impress.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="fabric">
+  <h2>Our Fabric Collection</h2>
+
+  <div class="fabric-grid">
+
+    <img src="https://i.postimg.cc/bNRcjDfy/IMG-20260505-WA0048.jpg">
+    <img src="https://i.postimg.cc/3xJMr8Yz/IMG-20260505-WA0047.jpg">
+    <img src="https://i.postimg.cc/FHstFrN2/IMG-20260505-WA0046.jpg">
+    <img src="https://i.postimg.cc/CxLyMhwp/IMG-20260505-WA0045.jpg">
+    <img src="https://i.postimg.cc/0ytTbTNd/IMG-20260505-WA0010.jpg">
+    <img src="https://i.postimg.cc/L8ycncsT/IMG-20260505-WA0009.jpg">
+    
+
+  </div>
+
+</section>
+<section class="cta">
+  <h2>Your Perfect Suit Awaits</h2>
+  <p>Get your custom tailored outfit today with perfect fitting and premium fabrics.</p>
+
+  <a href="https://wa.me/919258899559" target="_blank" class="cta-btn">
+    Order on WhatsApp
+  </a>
+</section>
+
+<section class="wedding">
+  <h2>Our Wedding Custom</h2>
+
+  <div class="wedding-grid">
+    <img src="https://i.postimg.cc/RZVrCSv3/IMG-20260505-WA0029.jpg">
+    <img src="https://i.postimg.cc/9QF3XmcD/IMG-20260505-WA0030.jpg">
+  </div>
+</section>
+
+
+<section class="about">
+  <h2>About Us</h2>
+
+  <p>
+    At <strong>SRK Studio</strong>, we specialize in premium bespoke tailoring,
+    delivering perfectly fitted suits with luxury fabrics and modern designs.
+    With years of experience in craftsmanship and fashion, we ensure every outfit
+    reflects elegance, confidence, and individuality.
+  </p>
+
+</section>
+
+<section class="testimonial">
+  <div class="testimonial-box">
+
+    <h2>What Clients Say About Us</h2>
+
+    <p class="review">
+      “Amazing fitting and premium quality. Truly professional tailoring service!”
+    </p>
+
+    <h4>- Happy Client</h4>
+
+  </div>
+</section>
+
+
+<section class="contact">
+  <h2>Contact Us</h2>
+  <p>📞 9258899559</p>
+  <p>📧 shahidrazvil20@gmail.com</p>
+  <p>📍 No.93-1758,36th Cross,
+          East End 'A' Main.
+        Jayanagar 9th Block,Bangluru-560 069   </p>
+</section>
+
+<div class="footer-social">
+
+  <a href="https://wa.me/919258899559" target="_blank">WhatsApp</a>
+
+  <a href="https://www.instagram.com/s.r.k_studio" target="_blank">Instagram</a>
+
+  <a href="https://mail.google.com/mail/?view=cm&to=shahidrazvil20@gmail.com" target="_blank">
+  Email
+</a>
+
+</div>
+
+<footer>
+  © 2026 SRK Studio
+</footer>
+
+</body>
+</html>
