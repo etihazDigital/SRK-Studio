@@ -24,6 +24,7 @@ header {
   background: black;
   color: white;
   width: 100%;
+  position: relative;
 }
 
 header h1 {
@@ -38,42 +39,98 @@ nav a {
 }
 
 /* HERO */
-.hero{
-  height:100vh;
-  background:
-  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-  url('https://i.postimg.cc/QNfbqJcr/Male-Mannequin-Torso-Dress-Form-Mannequin-Body.jpg');
-
-  background-size:cover;
-  background-position:center;
-  background-attachment:scroll;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+.hero {
+  height: 100vh;
+  background: url('https://i.postimg.cc/cLv1hbcd/Custom-White-Two-Piece-Suit-Formal-Wedding-Outfit-groom-outfit.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
 }
 
-.hero h1{
-  font-size:60px;
-  color:white;
-  letter-spacing:6px;
+/* dark overlay for luxury feel */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.20);
 }
 
-.hero p{
-  color:#ddd;
-  margin-top:10px;
-  font-size:18px;
+/* glass box */
+
+.hero-content h1 {
+  font-size: 44px;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-.hero a{
-  display:inline-block;
-  margin-top:25px;
-  padding:14px 30px;
-  background:gold;
-  color:black;
-  border-radius:30px;
-  text-decoration:none;
+.hero-content p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.hero-content a {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 26px;
+  background: gold;
+  color: black;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-content a:hover{
+  background: #d4af37;
+  transform: scale(1.50);
+}
+
+.hero-overlay{
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 40px 30px;
+  text-align: center;
+
+  /* CLEAN LUXURY GLASS */
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+}
+
+.hero-overlay h1 {
+  color: black !important;
+  font-weight: 700;
+}
+.hero-overlay p{
+  color: white !important;
+}
+.hero-overlay a{
+  margin-top: 20px;
+  display: inline-block;
+  padding: 12px 26px;
+  background: gold;
+  color: black;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero-overlay a:hover{
+  background: #d4af37;
+  transform: scale(1.05);
 }
 /* SECTION */
 section {
@@ -770,20 +827,19 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 600px) {
 
   nav {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 100%;
     right: 15px;
     background: black;
     padding: 15px;
     border-radius: 10px;
-    width: 160px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    width: 180px;
+    z-index: 9999;
   }
 
   nav.show {
@@ -792,6 +848,11 @@ body {
 
   .hamburger {
     display: block;
+    z-index: 10000;
+  }
+  .hamburger {
+  user-select: none;
+  cursor: pointer;
   }
 }
 @media (max-width: 768px) {
@@ -846,6 +907,21 @@ body {
     padding: 12px 22px;
     font-size: 13px;
   }
+
+
+  .hero-content {
+    max-width: 90%;
+    padding: 25px 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -892,6 +968,29 @@ body {
   .process-steps,
   .wedding-grid {
     gap: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-overlay {
+    max-width: 90%;
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .hero-overlay p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .hero-overlay a {
+    padding: 10px 18px;
+    font-size: 13px;
   }
 }
 </style>
@@ -1335,7 +1434,8 @@ body {
 </footer>
 <script>
 function toggleMenu() {
-  document.querySelector("nav").classList.toggle("show");
+  const nav = document.querySelector("nav");
+  nav.classList.toggle("show");
 }
 </script>
 </body>
