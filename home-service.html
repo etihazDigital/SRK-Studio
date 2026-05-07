@@ -14,7 +14,118 @@ body{
   background:#000;
   color:white;
 }
+/* HEADER */
 
+header {
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tagline {
+  color: #c9a227;
+  font-size: 11px;
+}
+
+/* NAV */
+
+nav {
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HAMBURGER */
+
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 5px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 10px;
+    background: black;
+    width: 170px;
+    padding: 15px;
+    border-radius: 10px;
+    gap: 12px;
+    z-index: 999;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .tagline {
+    font-size: 10px;
+  }
+}
 /* HERO */
 
 .hero {
@@ -25,7 +136,7 @@ body{
 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* PARALLAX EFFECT */
+  background-attachment: scroll;
 
   display: flex;
   align-items: center;
@@ -38,7 +149,7 @@ body{
 
 .hero-content h1 {
   font-size: 55px;
-  color: gold;
+  color: white;
   letter-spacing: 2px;
   animation: fadeUp 1.2s ease;
 }
@@ -61,17 +172,7 @@ body{
   animation: fadeUp 1.8s ease;
 }
 
-/* ANIMATION */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 /* SECTION */
 
@@ -81,7 +182,7 @@ body{
 }
 
 .section h2{
-  color:gold;
+  color:white;
   margin-bottom:20px;
   font-size:35px;
 }
@@ -93,16 +194,7 @@ body{
   line-height:1.8;
 }
 
-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
-}
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* CARDS */
 
@@ -127,7 +219,7 @@ section.show {
 }
 
 .card h3{
-  color:gold;
+  color:white;
   margin-bottom:10px;
 }
 
@@ -156,13 +248,13 @@ section.show {
 
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   color: white;
 }
 
 .cta-content h2 {
   font-size: 42px;
-  color: gold;
+  color: white;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -185,7 +277,7 @@ section.show {
 }
 
 .cta-content a:hover {
-  background: white;
+  background: gold;
   transform: scale(1.05);
 }
 /* FAQ */
@@ -203,7 +295,7 @@ section.show {
 }
 
 .faq-item h3{
-  color:gold;
+  color:white;
 }
 
 
@@ -224,7 +316,7 @@ section.show {
 }
 
 .exp-text h2{
-  color:gold;
+  color:white;
   font-size:38px;
   margin-bottom:15px;
 }
@@ -277,7 +369,7 @@ footer {
 
 .footer-social a {
   padding: 8px 14px;
-  background: gold;
+  background: white;
   color: black;
   border-radius: 20px;
   text-decoration: none;
@@ -312,7 +404,30 @@ footer {
 
 </style>
 </head>
+<header>
 
+  <div class="logo">
+
+    <img src="https://i.postimg.cc/pXBbthMv/IMG-20260505-215028.png" alt="logo">
+
+    <div class="logo-text">
+      <span class="brand-name">SRK Studio</span>
+      <span class="tagline">Bespoke Tailoring</span>
+    </div>
+
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#gallery">gallery</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+
+</header>
 <body>
 
 <!-- HERO -->
@@ -480,16 +595,14 @@ Frequently Asked Questions
 <script>
 const sections = document.querySelectorAll("section");
 
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    const trigger = window.innerHeight - 100;
 
-    if(top < trigger){
-      sec.classList.add("show");
-    }
-  });
-});
+
+
+
+function toggleMenu() {
+  document.querySelector("nav").classList.toggle("show");
+}
+
 </script>
 </body>
 </html>
