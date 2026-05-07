@@ -37,38 +37,42 @@ nav a {
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 80px 20px;
-  color: white;
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+  url('https://i.postimg.cc/QNfbqJcr/Male-Mannequin-Torso-Dress-Form-Mannequin-Body.jpg');
 
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("https://i.postimg.cc/TYcMXLvR/1777997985092.png");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 
-  background-size: cover;
-  background-position: center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
 }
 
-.hero h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  font-weight: bold;
+.hero h1{
+  font-size:60px;
+  color:gold;
+  letter-spacing:6px;
 }
 
-.hero p {
-  font-size: 16px;
-  color: #ddd;
+.hero p{
+  color:#ddd;
+  margin-top:10px;
+  font-size:18px;
 }
 
-.hero-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: gold;
-  color: black;
-  text-decoration: none;
-  border-radius: 25px;
-  font-size: 14px;
+.hero a{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 30px;
+  background:gold;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
 }
 /* SECTION */
 section {
@@ -155,11 +159,39 @@ section {
 }
 
 /* FOOTER */
+
 footer {
   background: black;
   color: white;
-  padding: 10px;
-  font-size: 12px;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.footer-content p {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-social a {
+  padding: 8px 14px;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  background: white;
 }
 
 
@@ -194,8 +226,8 @@ footer {
 
 .marquee {
   overflow: hidden;
-  background: black;
-  color: gold;
+  background: white;
+  color: black;
   padding: 10px 0;
 }
 
@@ -388,30 +420,6 @@ header {
 }
 
 
-.footer-social {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 15px;
-  flex-wrap: wrap;
-}
-
-.footer-social a {
-  padding: 8px 14px;
-  background: gold;
-  color: black;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 13px;
-}
-
-footer {
-  background: black;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  font-size: 13px;
-}
 
 
 .wedding {
@@ -516,6 +524,125 @@ footer {
   font-size: 13px;
 }
 
+.product-card {
+  background: #111;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  transition: 0.3s;
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  color: gold;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.product-card p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.product-card a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: gold;
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+.product-card a:hover {
+  background: white;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.home-service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 60px 20px;
+  background: #111;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.home-service-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.home-service-text h2 {
+  color: gold;
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+
+.home-service-text p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: gold;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: white;
+}
+
+.home-service-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.home-service-image img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.story{
+  padding:100px 20px;
+  text-align:center;
+  background:black;
+}
+
+.story h2{
+  color:gold;
+  font-size:38px;
+}
+
+.story p{
+  max-width:700px;
+  margin:auto;
+  margin-top:20px;
+  color:#ccc;
+  line-height:1.8;
+}
 
 /* MOBILE FIX */
 @media (max-width:600px){
@@ -607,6 +734,15 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+
+  .home-service {
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
 
 </style>
 </head>
@@ -625,21 +761,27 @@ footer {
 </div>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#sevicrs">Services</a>
-    <a href="#dallery">Gallery</a>
+    <a href="home-service.html">Home Service</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
 
 </header>
 
 <section class="hero">
-  <h2>Bespoke Tailoring & Design</h2>
-  <p>Premium suits, western wear & fashion academy</p>
-  <a href="#contact" class="hero-btn">Contact Now</a>
-  this is a demo website 
-</section>
 
+  <div class="hero-overlay">
+
+    <h1>SRK STUDIO</h1>
+
+    <p>Bespoke tailoring, redefined for modern elegance</p>
+
+    <a href="https://wa.me/919258899559">Book Private Appointment</a>
+
+  </div>
+
+</section>
 
 <div class="marquee">
   <p>
@@ -647,21 +789,103 @@ footer {
   </p>
 </div>
 
+<section class="story">
+
+  <h2>Crafted for those who value detail</h2>
+
+  <p>
+    At SRK Studio, we don’t just tailor clothes — we design identity, elegance, and presence.
+  </p>
+
+</section>
 
 <section class="gallery">
   <h2>Our Work</h2>
-
+<section id="gallery">
   <div class="gallery-grid">
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/VkLysfz8/IMG-20260505-WA0042.jpg">
+
+    <h3>Royal Suit</h3>
+
+    <p>₹4,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Royal%20Suit" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/sgDFfj3R/IMG-20260505-WA0043.jpg">
+
+    <h3>Wedding Custom</h3>
+
+    <p>₹6,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Wedding%20Custom" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/SxN0QSm0/IMG-20260505-WA0044.jpg">
 
-    <img src="https://i.postimg.cc/fRHGJGbd/IMG-20260505-WA0017.jpg">
-    <img src="https://i.postimg.cc/t4C0Rq9Y/IMG-20260505-WA0031.jpg">
-    <img src="https://i.postimg.cc/CxLyMhwK/IMG-20260505-WA0033.jpg">
-  </div>
-</section>
+    <h3>Classic Style</h3>
 
+    <p>₹5,499</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Classic%20Style" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/fRHGJGbd/IMG-20260505-WA0017.jpg">
+
+    <h3>Royal Suit</h3>
+
+    <p>₹4,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Royal%20Suit" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/t4C0Rq9Y/IMG-20260505-WA0031.jpg">
+
+    <h3>Wedding Custom</h3>
+
+    <p>₹6,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Wedding%20Custom" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/CxLyMhwK/IMG-20260505-WA0033.jpg">
+
+    <h3>Classic Style</h3>
+
+    <p>₹5,499</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Classic%20Style" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+</div>
+
+
+</section>
+<section id="services">
 
 <section class="services">
   <h2>Our Services</h2>
@@ -686,19 +910,118 @@ footer {
   </div>
 </section>
 
+
+<section class="home-service">
+
+  <div class="home-service-text">
+
+    <h2>Luxury Tailoring At Your Home</h2>
+
+    <p>
+      Experience premium bespoke tailoring from the comfort of your home.
+      Our expert team visits your location for measurements, fabric selection,
+      and personalized styling consultation.
+    </p>
+
+    <a href="home-service.html" class="home-btn">
+      Explore Home Service
+    </a>
+
+  </div>
+
+  <div class="home-service-image">
+    <img src="https://i.postimg.cc/9QF3XmcD/IMG-20260505-WA0030.jpg">
+  </div>
+
+</section>
+
 <section class="women">
   <h2>Women Collection</h2>
 
   <div class="women-grid">
 
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/SxN0QSm9/IMG-20260505-WA0025.jpg">
+
+    <h3>Elegant Dress</h3>
+
+    <p>₹3,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Elegant%20Dress" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/x1Trjf9H/IMG-20260505-WA0024.jpg">
+
+    <h3>Luxury Outfit</h3>
+
+    <p>₹4,499</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Luxury%20Outfit" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/8zP8kpTM/IMG-20260505-WA0023.jpg">
+
+    <h3>Wedding Collection</h3>
+
+    <p>₹5,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Wedding%20Collection" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/XY2RpRvq/IMG-20260505-WA0022.jpg">
+
+    <h3>Elegant Dress</h3>
+
+    <p>₹3,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Elegant%20Dress" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/SxZBJBKJ/IMG-20260505-WA0021.jpg">
+
+    <h3>Luxury Outfit</h3>
+
+    <p>₹4,499</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Luxury%20Outfit" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/g2MCnC0w/IMG-20260505-WA0020.jpg">
 
+    <h3>Wedding Collection</h3>
+
+    <p>₹5,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Wedding%20Collection" target="_blank">
+      Order on WhatsApp
+    </a>
   </div>
+
+</div>
+
+</div>
 </section>
 
 
@@ -765,9 +1088,33 @@ footer {
   <h2>Our Wedding Custom</h2>
 
   <div class="wedding-grid">
+    
+
+  <div class="product-card">
     <img src="https://i.postimg.cc/RZVrCSv3/IMG-20260505-WA0029.jpg">
-    <img src="https://i.postimg.cc/9QF3XmcD/IMG-20260505-WA0030.jpg">
+
+    <h3>Elegant Dress</h3>
+
+    <p>₹3,999</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Elegant%20Dress" target="_blank">
+      Order on WhatsApp
+    </a>
   </div>
+
+
+  <div class="product-card">
+    <img src="https://i.postimg.cc/9QF3XmcD/IMG-20260505-WA0030.jpg">
+
+    <h3>Luxury Outfit</h3>
+
+    <p>₹4,499</p>
+
+    <a href="https://wa.me/919258899559?text=I%20want%20to%20order%20Luxury%20Outfit" target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
 </section>
 
 
@@ -796,7 +1143,7 @@ footer {
 
   </div>
 </section>
-
+<section id="contact">
 
 <section class="contact">
   <h2>Contact Us</h2>
@@ -807,20 +1154,25 @@ footer {
         Jayanagar 9th Block,Bangluru-560 069   </p>
 </section>
 
-<div class="footer-social">
-
-  <a href="https://wa.me/919258899559" target="_blank">WhatsApp</a>
-
-  <a href="https://www.instagram.com/s.r.k_studio" target="_blank">Instagram</a>
-
-  <a href="https://mail.google.com/mail/?view=cm&to=shahidrazvil20@gmail.com" target="_blank">
-  Email
-</a>
-
-</div>
-
 <footer>
-  © 2026 SRK Studio
+
+  <div class="footer-content">
+
+    <p>© 2026 SRK Studio. All Rights Reserved.</p>
+
+    <div class="footer-social">
+
+      <a href="https://wa.me/919258899559" target="_blank">WhatsApp</a>
+
+      <a href="https://www.instagram.com/s.r.k_studio" target="_blank">Instagram</a>
+
+      <a href="https://mail.google.com/mail/?view=cm&to=shahidrazvil20@gmail.com" target="_blank">
+  Email
+
+    </div>
+
+  </div>
+
 </footer>
 
 </body>
